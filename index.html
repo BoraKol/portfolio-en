@@ -228,6 +228,8 @@
         }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
             background: var(--bg-card);
             border-radius: 24px;
             overflow: hidden;
@@ -248,6 +250,7 @@
 
         .project-img {
             height: 200px;
+            flex-shrink: 0;
             overflow: hidden;
             background: #111;
         }
@@ -256,6 +259,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
             filter: grayscale(20%);
             transition: transform 0.4s ease, filter 0.4s ease;
         }
@@ -266,29 +270,39 @@
         }
 
         .project-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
             padding: 24px;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 24px;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0 20px;
+            gap: 6px;
+            margin: 12px 0 18px;
         }
 
         .tag {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
-            padding: 4px 10px;
+            padding: 4px 9px;
             border-radius: 6px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 500;
         }
 
         .project-links {
             display: flex;
             gap: 12px;
-            margin-top: 20px;
+            margin-top: auto;
         }
 
         .btn {
@@ -542,31 +556,10 @@
             </div>
 
             <div class="project-grid">
-                <!-- Project 1 -->
+                <!-- Project 1: ReflüRehber -->
                 <div class="project-card reveal">
                     <div class="project-img">
-                        <img src="images/kariyer-mentoru-ai-ss.png" alt="Career Mentor AI" width="600" height="375" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>Kariyer Mentoru AI</h3>
-                        <div class="project-tags">
-                            <span class="tag">LLM</span>
-                            <span class="tag">RAG</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <p>Intelligent career advisory system utilizing vector search and RAG architecture.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/BoraKol/kariyer_mentoru_ai" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://kariyer-mentoru-ai.streamlit.app" class="btn btn-primary" target="_blank">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card reveal">
-                    <div class="project-img">
-                        <img src="images/reflu-rehberi-ss.jpg" alt="ReflüRehber - GERD & LPR Personal Tracking Guide" width="600" height="375" decoding="async">
+                        <img src="images/reflu-rehberi-ss.jpg" alt="ReflüRehber - GERD &amp; LPR Personal Tracking Guide" width="600" height="375" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3>ReflüRehber</h3>
@@ -578,39 +571,19 @@
                         </div>
                         <p>Personal GERD &amp; silent reflux (LPR) journal for discovering triggers with transparent, hallucination-free tracking.</p>
                         <div class="project-links">
-                            <a href="https://github.com/BoraKol/reflu-rehberi" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://reflu-rehberi-nu.vercel.app/" class="btn btn-primary" target="_blank">Live Demo</a>
+                            <a href="https://github.com/BoraKol/reflu-rehberi" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://reflu-rehberi-nu.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 2: Beauty Studio Assistant -->
                 <div class="project-card reveal">
                     <div class="project-img">
-                        <img src="images/virtual-try-on-ss.png" alt="Virtual Try On" width="600" height="375" decoding="async">
+                        <img src="images/guzellik-merkezi-studyo-ss.jpg" alt="Beauty Studio Assistant" width="600" height="375" decoding="async">
                     </div>
                     <div class="project-info">
-                        <h3>Virtual Try On</h3>
-                        <div class="project-tags">
-                            <span class="tag">Vertex AI</span>
-                            <span class="tag">Image Gen</span>
-                            <span class="tag">Python</span>
-                        </div>
-                        <p>Advanced Generative AI system for virtual fashion e-commerce experiences.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/BoraKol/virtual-try-on" class="btn btn-outline" target = "_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://virtual-try-on-murex.vercel.app/" class="btn btn-primary" target = "_blank">Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Güzellik Merkezi Stüdyo -->
-                <div class="project-card reveal">
-                    <div class="project-img">
-                        <img src="images/guzellik-merkezi-studyo-ss.jpg" alt="Güzellik Merkezi Stüdyo" width="600" height="375" loading="lazy" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>Güzellik Merkezi Stüdyo</h3>
+                        <h3>Beauty Studio Assistant</h3>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">TypeScript</span>
@@ -619,13 +592,34 @@
                         </div>
                         <p>All-in-one beauty studio panel with AI-assisted treatment logging, recall radar, drag-and-drop scheduling, and an Instagram Bio calculator.</p>
                         <div class="project-links">
-                            <a href="https://github.com/BoraKol/guzellik-studyo-asistani" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://guzellik-studyo-asistani.vercel.app/" class="btn btn-primary" target="_blank">Live Demo</a>
+                            <a href="https://github.com/BoraKol/guzellik-studyo-asistani" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://guzellik-studyo-asistani.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5: Budget-Tracker -->
+                <!-- Project 3: Career Mentor AI -->
+                <div class="project-card reveal">
+                    <div class="project-img">
+                        <img src="images/kariyer-mentoru-ai-ss.png" alt="Career Mentor AI" width="600" height="375" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3>Career Mentor AI</h3>
+                        <div class="project-tags">
+                            <span class="tag">LLM</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <p>Intelligent career advisory system utilizing vector search and RAG architecture.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/BoraKol/kariyer_mentoru_ai" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://kariyer-mentoru-ai.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Budget Tracker -->
                 <div class="project-card reveal">
                     <div class="project-img">
                         <img src="images/budget-tracker-ss.png" alt="Budget Tracker" width="600" height="375" loading="lazy" decoding="async">
@@ -639,13 +633,13 @@
                         </div>
                         <p>An automated budget tracking and financial management system.</p>
                         <div class="project-links">
-                            <a href="https://github.com/BoraKol/Budget-Tracker" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://finance-flow.streamlit.app/" class="btn btn-primary" target="_blank">Demo</a>
+                            <a href="https://github.com/BoraKol/Budget-Tracker" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://finance-flow.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 6: Iron-Insight -->
+                <!-- Project 5: Iron Insight -->
                 <div class="project-card reveal">
                     <div class="project-img">
                         <img src="images/iron-insight-ss.png" alt="Iron Insight" width="600" height="375" loading="lazy" decoding="async">
@@ -659,8 +653,8 @@
                         </div>
                         <p>Personal lifting analytics app for workout logging, progress tracking, personal records, and 1RM estimation.</p>
                         <div class="project-links">
-                            <a href="https://github.com/BoraKol/Iron-Insight" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://iron-insight.streamlit.app/" class="btn btn-primary" target="_blank">Demo</a>
+                            <a href="https://github.com/BoraKol/Iron-Insight" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://iron-insight.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
                         </div>
                     </div>
                 </div>
