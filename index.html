@@ -223,7 +223,7 @@
         /* Projects Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
         }
 
@@ -486,6 +486,12 @@
             opacity: 0.5;
         }
 
+        @media (max-width: 992px) {
+            .project-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .cursor-dot, .cursor-outline { display: none; }
             .about-grid {
@@ -497,6 +503,12 @@
             }
             .nav-links {
                 display: none; /* Simplification for mobile */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .project-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -598,10 +610,31 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Career Mentor AI -->
+                <!-- Project 3: OtoKarne -->
                 <div class="project-card reveal">
                     <div class="project-img">
-                        <img src="images/kariyer-mentoru-ai-ss.png" alt="Career Mentor AI" width="600" height="375" decoding="async">
+                        <img src="images/oto-karne-ss.jpg" alt="OtoKarne - Smart Vehicle Maintenance Logbook" width="600" height="375" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3>OtoKarne</h3>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Three.js</span>
+                            <span class="tag">Gemini AI</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <p>Digital vehicle logbook turning service notes into structured maintenance records, smart service forecasts, inspection reminders, and one-click A4 PDF reports.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/BoraKol/oto-rehberi" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://oto-rehberi.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Career Mentor AI -->
+                <div class="project-card reveal">
+                    <div class="project-img">
+                        <img src="images/kariyer-mentoru-ai-ss.png" alt="Career Mentor AI" width="600" height="375" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3>Career Mentor AI</h3>
@@ -619,7 +652,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Budget Tracker -->
+                <!-- Project 5: Budget Tracker -->
                 <div class="project-card reveal">
                     <div class="project-img">
                         <img src="images/budget-tracker-ss.png" alt="Budget Tracker" width="600" height="375" loading="lazy" decoding="async">
@@ -639,7 +672,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Iron Insight -->
+                <!-- Project 6: Iron Insight -->
                 <div class="project-card reveal">
                     <div class="project-img">
                         <img src="images/iron-insight-ss.png" alt="Iron Insight" width="600" height="375" loading="lazy" decoding="async">
